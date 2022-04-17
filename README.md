@@ -4,13 +4,13 @@ This is our implementation for the paper:
 
 LDPGuard: Defenses against Data Poisoning Attacks to Local Differential Privacy Protocols
 
-LDPGuard is implemented with Python 3.10 (JDK1.8).
+LDPGuard is implemented with Python 3.10.
 
 # Environments
 
 Python 3.10
 
-Pycharm
+PyCharm
 
 # Dataset
 
