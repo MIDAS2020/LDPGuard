@@ -14,39 +14,32 @@ Pycharm
 
 # Dataset
 
-AIDS antiviral dataset https://wiki.nci.nih.gov/display/NCIDTPdata/AIDS+Antiviral+Screen+Data
+1. IPUMS.  Ruggles Steven, Flood Sarah, Goeken Ronald, Grover Josiah, Meyer Erin, Pacas Jose, and Sobek Matthew. IPUMS USA: Version 9.0 [dataset]. minneapolis, mn: Ipums, 2019. https://doi.org/10.18128/D010.V9.0, 2019.
+ 
+2. Fire.   San francisco fire department calls for service. http://bit.ly/336sddL, 2019.
 
-PubChem dataset ftp://ftp.ncbi.nlm.nih.gov/pubchem/Compound/CURRENT-Full/SDF/
+3. Zipf. Zipf is a synthetic dataset that follows the Zipf distribution.  
 
-eMolecule dataset https://www.emolecules.com/info/plus/download-database
+# Implementations and Running examples of Baselines
 
-# Example to run the codes
-We first illustrate how to run TED with an exapmle. Then, examples of its variants (BASE, DSS, PRM, and TEDLite, see Section 7.1) are presented.
+1. We implement state-of-the-art LDP Protocols, kRR, OUE and OLH (detailed in kRR.py, OUE.py and OLH.py).
 
-Let the dataset be AIDS40K, inputfile "AIDS40k", outputfile "AIDS40k_result.txt".
+For each protocol, we implement the encode, perturb and aggregate functions.  
 
-TED
-Step 1: Parameter Setting in main/Arguments.java.
+2. In addition, we implement detection methods for OUE and OLH in OUE.py and OLH.py.
 
-    1） hyperparameter setting. 
-    
-         inFilePath  =  "AIDS40k";  outFilePath =  "AIDS40k_result.txt"; minSup  =  1;  swapcondition  = "swap1"; maxNodeNum = 11;
-         
-         numberofpatterns = 5;      numberofgraphs   = 40000;  isPESIndex  = true;
-         
-    2)  parameter setting for optimization strategies
-    
-         Since all optimization strategies are used by TED,  we set hasPRM = true;  hasDSS = true;  hasInitialPatternGenerator  = true
-         
-         In addition, we set isLightVersion = false.
-Step 2: Run the main class, main/TEDSMain.java. The results can be found in the outputfile.
+3. By running main.py with Pycharm, we can obtain the results of baselines.
 
-TED's variants
-Step 1: Unless specified otherwise, the parameter settings are the same as above.
 
-     1) PRM:  Set hasInitialPatternGenerator  = false; 2) DSS:  Set hasInitialPatternGenerator  = false and hasPRM = false; 
-     
-     3) BASE: Set hasInitialPatternGenerator  = false, hasPRM = false, and hasDSS = false;
-     
-     4) TEDLite:  Set isLightVersion = true.
-Step 2: Run the main class, main/TEDSMain.java. The results can be found in the outputfile.
+# Implementations  and Running examples of LDPGuard
+
+1. We implement LDPGuard in LDPGuard.py. We can run it with Pycharm to evaluate the performance of LDPGuard.
+
+2. We can evaluate LDPGuard on different dataset by setting  distribution = 'XXX' in the main function. For example, distribution = 'IPUMS'. 
+
+3. Set Beta = 0.01 or 0.05 or 0.1 to evaluate the effect of Beta (i.e., percentage of fake users).  
+
+4. Set NumofTarget = 5 or 10 or 15 to evaluate the effect of r (i.e., the number of targets). 
+
+5. Set epsilon 1 or 1.5 or 2 to evaluate the effect of epsilon (i.e, privacy budget)
+
