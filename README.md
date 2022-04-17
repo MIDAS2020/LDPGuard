@@ -41,5 +41,5 @@ For each protocol, we implement the encode, perturb and aggregate functions.
 
 4. Set NumofTarget = 5 or 10 or 15 to evaluate the effect of r (i.e., the number of targets). 
 
-5. Set epsilon 1 or 1.5 or 2 to evaluate the effect of epsilon (i.e, privacy budget)
+5. Set epsilon = 1 or 1.5 or 2 to evaluate the effect of epsilon (i.e, privacy budget)
 
